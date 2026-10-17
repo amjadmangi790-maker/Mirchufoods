@@ -1,0 +1,125 @@
+html
+<!DOCTYPE html>
+<html lang="ur" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MirchuFoods - Pure Dairy & Organic Products</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            900: '#061a12',
+                            800: '#0e2f22',
+                            700: '#1a4a36',
+                            600: '#2b6e52',
+                            500: '#3d9970',
+                            400: '#52b788',
+                            300: '#74c69d',
+                            200: '#b7e4c7',
+                            100: '#d8f3dc',
+                            gold: '#fbbf24',
+                            amberDark: '#b45309'
+                        }
+                    },
+                    keyframes: {
+                        shine: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(200%)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { filter: 'drop-shadow(0 0 12px rgba(82, 183, 136, 0.6))' },
+                            '50%': { filter: 'drop-shadow(0 0 22px rgba(251, 191, 36, 0.9))' }
+                        },
+                        floatSlow: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-5px)' }
+                        }
+                    },
+                    animation: {
+                        shine: 'shine 3.5s infinite',
+                        pulseGlow: 'pulseGlow 2.5s infinite ease-in-out',
+                        floatSlow: 'floatSlow 3s infinite ease-in-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #061a12;
+            color: #f1f5f9;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #061a12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1a4a36;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3d9970;
+        }
+
+        /* High contrast light mint/cream product boxes */
+        .product-card {
+            background: linear-gradient(145deg, #ffffff, #f0fdf4);
+            border: 2px solid #a7f3d0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px rgba(82, 183, 136, 0.2);
+        }
+        .product-card:hover {
+            border-color: #f59e0b;
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.4), 0 0 25px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Ambient Canvas */
+        #leafCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 40;
+        }
+
+        /* Text glow effect */
+        .brand-glow {
+            text-shadow: 0 0 20px rgba(82, 183, 136, 0.8), 0 0 35px rgba(251, 191, 36, 0.4);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden antialiased pb-20">
+
+    <!-- Leaf/Petal Floating Particle Canvas -->
+    <canvas id="leafCanvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-30 bg-brand-900/95 backdrop-blur-md border-b border-brand-700/60 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Sleek 3D Brand Logo -->
+            <div class="flex items-center space-x-3 group cursor-pointer">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 via-emerald-500 to-brand-300 p-0.5 shadow-lg animate-pulseGlow">
+                    <div class="w-full h-full bg-brand-900 rounded-[14px] flex items-center justify-center">
+                        <i class="fa-solid fa-leaf text-2xl text-amber-400"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center brand-glow">
+                        Mirchu<span class="text-amber-400">Foods</span>
+                    </span>
+                    <span class="block text-[10px] tracking-widest text-brand-300 font-extrabold u
