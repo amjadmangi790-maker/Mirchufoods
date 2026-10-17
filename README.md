@@ -1,2 +1,2 @@
 # Mirchufoods
-​Pure &amp; Organic Food Shop in Larkana - MirchuFoods
+Mirchufoods The place of ​Pure &amp; Organic Foods
